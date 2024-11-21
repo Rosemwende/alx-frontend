@@ -170,11 +170,15 @@
   
   .visually-hidden:not(:focus):not(:active) {
     position: absolute !important;
-    height: auto;
-    width: 100%;
+    height: 1px;
+    width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+  }
+  .main img {
+    width: 100%;
+    height: auto;
   }
   
   /*** 2. LAYOUT ***/
@@ -190,13 +194,19 @@
   
   /* Grid
       ============================= */
-  :root {
-    --section-padding: 5rem 1.5rem;
-     --section-body-padding: 2rem 0 0;
-  }
-  ul.row, .row {
+  
+  ul.row {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     flex-direction: column;
-     margin: 0;
+
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
   
   [class*='col-'] {
@@ -208,9 +218,14 @@
   }
   
   .col-1-2 {
-    width: 100%;
+    width: 100%
   }
-  
+  @media (max-width: 767px) {
+    :root {
+        --section-padding: 5rem 1.5rem;
+        --section-body-padding: 2rem 0 0;
+    }
+  }
   /* Navbar
       ============================= */
   
@@ -261,11 +276,9 @@
   }
   @media (max-width: 767px) {
     .navbar-menu {
-    display: none;
+        display: none;
     }
   }
-
-  
   /* Header
       ============================= */
   
@@ -400,10 +413,13 @@
   /* Section Latest news
       ============================= */
   
-  @media (max-width: 767px){
   .section-latest-news .row {
     flex-direction: column;
   }
+  @media (max-width: 767px) {
+    .section-latest-news .row {
+        flex-direction: column;
+    }
   }
   /* Section SERVICES
       ============================= */
