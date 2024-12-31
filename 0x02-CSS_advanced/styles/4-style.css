@@ -1,4 +1,4 @@
-/* Define the custom font-family variables in the root element */
+/* Define the custom font-family properties in the root element */
 :root {
     --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
